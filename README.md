@@ -11,9 +11,12 @@
 | Component | Spec |
 |-----------|------|
 | Device | HP EliteBook 840 G3 |
-| RAM | 16GB |
+| CPU | Intel i5-6300U (4) @ 3.000GHz |
+| RAM | 16GB (15874MiB) |
 | Storage | 230GB SSD |
-| OS | Ubuntu Server 24 LTS |
+| GPU | Intel Skylake GT2 [HD Graphics 520] |
+| OS | Ubuntu Server 24.04.4 LTS x86_64 |
+| Kernel | 6.8.0-101-generic |
 
 ---
 
