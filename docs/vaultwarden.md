@@ -38,3 +38,11 @@ Fixed by updating the IP on the DuckDNS dashboard.
 Use the official Bitwarden app or browser extension.
 When logging in, set the server URL to:
 https://marshixelhomelab.duckdns.org
+
+## Why self-hosted?
+- Full control over your password data
+- No dependency on third-party services
+- Free, no subscription needed
+- Ability to update Vaultwarden yourself on your own schedule
+- Compatible with GrapheneOS on Google Pixel 10 XL via the official Bitwarden app
+  (no Google Play Services required, available via F-Droid or direct APK)
