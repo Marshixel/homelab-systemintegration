@@ -71,3 +71,10 @@ docker inspect prometheus | grep Gateway
 - Docker bypasses UFW rules by default, requiring direct IP-based firewall rules
 - Always inspect container networking when containers can't reach each other
 - AI assisted debugging by reading logs and identifying root causes step by step
+
+## Config
+See [docker/monitoring/docker-compose.yml](../docker/monitoring/docker-compose.yml)
+See [docker/monitoring/prometheus.yml](../docker/monitoring/prometheus.yml)
+
+To rebuild: copy both files to /srv/monitoring and run docker compose up -d.
+Remember to allow Docker subnets through UFW for node-exporter access.

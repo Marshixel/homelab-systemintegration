@@ -38,3 +38,9 @@ in their docker-compose.yml files.
 Duplicate network definitions in docker-compose.yml caused a YAML parse error.
 Fixed by properly structuring the networks section with a single
 top-level networks block.
+
+## Config
+See [docker/nginx/docker-compose.yml](../docker/nginx/docker-compose.yml)
+
+To rebuild: copy the compose file to /srv/nginx and run docker compose up -d.
+Then recreate proxy hosts and SSL certificates via the web UI at port 81.

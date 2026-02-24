@@ -27,3 +27,10 @@ Nothing is exposed directly to the internet except the VPN port itself.
 cd /srv/wireguard
 docker compose up -d
 ```
+
+## Config
+See [docker/wireguard/docker-compose.yml](../docker/wireguard/docker-compose.yml)
+
+To rebuild: copy the compose file to /srv/wireguard and run docker compose up -d.
+Note: peer configs in /srv/wireguard/config are not committed to GitHub for security.
+Generate new peer configs after rebuilding.

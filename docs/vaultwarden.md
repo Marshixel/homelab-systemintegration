@@ -56,3 +56,11 @@ Setup:
 - Using EU relay servers (api.bitwarden.eu / identity.bitwarden.eu)
 
 Note: .env file is excluded from git to keep credentials private.
+
+## Config
+See [docker/vaultwarden/docker-compose.yml](../docker/vaultwarden/docker-compose.yml)
+
+Note: Sensitive values (PUSH_INSTALLATION_ID, PUSH_INSTALLATION_KEY) are
+stored in /srv/vaultwarden/.env and never committed to GitHub.
+To rebuild: copy the compose file, create a .env file with your credentials
+and run docker compose up -d.
