@@ -46,3 +46,13 @@ https://marshixelhomelab.duckdns.org
 - Ability to update Vaultwarden yourself on your own schedule
 - Compatible with GrapheneOS on Google Pixel 10 XL via the official Bitwarden app
   (no Google Play Services required, available via F-Droid or direct APK)
+
+## Push Notifications
+Push notifications are enabled so Vaultwarden syncs instantly to mobile clients.
+
+Setup:
+- Register at https://bitwarden.com/host to get an Installation ID and Key
+- Store credentials in /srv/vaultwarden/.env (never commit this to GitHub)
+- Using EU relay servers (api.bitwarden.eu / identity.bitwarden.eu)
+
+Note: .env file is excluded from git to keep credentials private.
