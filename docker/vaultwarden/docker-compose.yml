@@ -1,0 +1,25 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    volumes:
+      - /srv/vaultwarden/data:/data
+    environment:
+      - DOMAIN=https://vaultwarden-marshixel.duckdns.org
+      - SIGNUPS_ALLOWED=false
+## Enables push notifications (requires key and id from https://bitwarden.com/host)
+      ## Details about mobile client push notification:
+      ## - https://github.com/dani-garcia/vaultwarden/wiki/
+      - PUSH_ENABLED=true
+      - PUSH_INSTALLATION_ID=${PUSH_INSTALLATION_ID}
+      - PUSH_INSTALLATION_KEY=${PUSH_INSTALLATION_KEY}
+      - PUSH_RELAY_URI=https://api.bitwarden.eu
+      - PUSH_IDENTITY_URI=https://identity.bitwarden.eu
+    networks:
+      - npm_network
+
+networks:
+  npm_network:
+    external: true
+    name: nginx_default
