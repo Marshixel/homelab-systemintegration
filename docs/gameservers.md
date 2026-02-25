@@ -44,6 +44,19 @@ docker exec <container-name> rcon-cli <command>
 - Path: /srv/gameservers/minecraft-vanilla
 - Docker config: [docker/gameservers/minecraft-vanilla/docker-compose.yml](../docker/gameservers/minecraft-vanilla/docker-compose.yml)
 
+## Known issues & troubleshooting
+
+### PaperMC download fails on startup
+If the server fails to start with "Failed to download paper" errors,
+the PaperMC CDN (fill.papermc.io) is temporarily down.
+The container will automatically retry — just wait a few minutes.
+
+### Whitelist username not found
+Usernames must be valid Java Edition accounts.
+If you get "Could not resolve user from Playerdb" the username is wrong or doesn't exist.
+Fix: docker exec minecraft-vanilla rcon-cli "whitelist remove WrongName"
+     docker exec minecraft-vanilla rcon-cli "whitelist add CorrectName"
+
 ## Planned servers
 - Modded Minecraft (Cobblemon)
 - Modded Minecraft (ATM10)
