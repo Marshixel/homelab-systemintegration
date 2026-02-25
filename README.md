@@ -63,7 +63,7 @@ Only one or two run simultaneously due to hardware constraints.
 | Modded Minecraft (Cobblemon) | Planned | - |
 | Modded Minecraft (ATM10) | Planned | - |
 | Garry's Mod TTT | Planned | - |
-| Hytale | Planned (not released) | - |
+| Hytale | Planned | - |
 
 Friends connect via: `marshixelhomelab.duckdns.org`
 
