@@ -48,8 +48,9 @@ docker exec <container-name> rcon-cli <command>
 - Modded Minecraft (Cobblemon)
 - Modded Minecraft (ATM10)
 - Garry's Mod TTT
-- Hytale (when released)
+- Hytale
+- Hytale Modded
 
 ## Friend access
 Friends connect via: marshixelhomelab.duckdns.org
-Port 25565 forwarded in Fritz!Box router.
+Port 25565 forwarded in Telekom router.
