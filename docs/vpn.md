@@ -34,3 +34,25 @@ See [docker/wireguard/docker-compose.yml](../docker/wireguard/docker-compose.yml
 To rebuild: copy the compose file to /srv/wireguard and run docker compose up -d.
 Note: peer configs in /srv/wireguard/config are not committed to GitHub for security.
 Generate new peer configs after rebuilding.
+
+## Port forwarding
+Port 51820 UDP must be forwarded in the Fritz!Box router to the server.
+Without this, external clients cannot reach the WireGuard daemon.
+
+## Client setup (Mobile - GrapheneOS)
+1. Install WireGuard from F-Droid
+2. Generate QR code on server: `docker exec wireguard /app/show-peer 1`
+3. In WireGuard app: tap + → Scan QR code
+4. Enable the tunnel
+
+## Testing
+With VPN active you can:
+- SSH into the server via 10.13.13.1
+- Access Vaultwarden internally
+- Access Grafana via SSH tunnel
+
+## Troubleshooting
+If VPN connects but no data is received:
+- Check Telekom port forwarding for 51820 UDP
+- Check UFW: sudo ufw status | grep 51820
+- Check handshake: docker exec wireguard wg show
