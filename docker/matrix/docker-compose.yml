@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: matrix_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: synapse
+      POSTGRES_USER: synapse
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    networks:
+      - nginx_default
+
+  synapse:
+    image: matrixdotorg/synapse:latest
+    container_name: matrix_synapse
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    volumes:
+      - ./data/synapse:/data
+    ports:
+      - "8448:8448"
+    networks:
+      - nginx_default
+
+  element:
+    image: vectorim/element-web:latest
+    container_name: matrix_element
+    restart: unless-stopped
+    networks:
+      - nginx_default
+
+networks:
+  nginx_default:
+    external: true
