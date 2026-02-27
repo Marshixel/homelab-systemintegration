@@ -97,6 +97,12 @@ Fixed by removing the line entirely (default behaviour is to allow all federatio
 Element desktop client showed a spinner after login and never completed verification.
 Caused by stale cross-signing state in the Element config directory.
 Fixed by clearing the Element config:
+
+### Problem 7: Element mobile app on GrapheneOS could not find the server
+Element showed ".well-known not available" when trying to connect.
+The /.well-known/matrix/client endpoint was missing from the NPM config.
+Mobile apps also require the Access-Control-Allow-Origin header or they reject the response.
+Fixed by adding the client well-known location block to NPM's Advanced tab:
 ```bash
 # AppImage / DEB installation
 rm -rf ~/.config/Element
