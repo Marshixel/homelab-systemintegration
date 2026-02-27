@@ -1,0 +1,90 @@
+server_name: "matrix-marshixel.duckdns.org"
+pid_file: /data/homeserver.pid
+
+
+enable_registration: true
+enable_registration_without_verification: true
+suppress_key_server_warning: true
+cross_signing:
+  enabled: true
+
+rc_registration:                             # optional, but highly recommended
+  per_second: 0.5
+  burst_count: 5
+
+# Optional email/password‑reset block (uncomment and fill if you want it)
+# email:
+#   smtp_host: "smtp.example.com"
+#   smtp_port: 587
+#   smtp_user: "your@email.example.com"
+#   smtp_pass: "YOUR_SMTP_APP_PASSWORD"
+#   notif_from: "matrix@marshixel.duckdns.org"
+#   notif_template_html: "/data/email_template.html"
+#
+# password_reset:
+#   enable: true
+
+listeners:
+  - port: 8008
+    bind_addresses: ['0.0.0.0']
+    type: http
+    tls: false
+    x_forwarded: true
+    resources:
+      - names: ["client", "federation"]
+        compress: false
+
+  - port: 8448
+    bind_addresses: ['0.0.0.0']
+    type: http
+    tls: false
+    x_forwarded: true
+    resources:
+      - names: ["federation"]
+        compress: false
+# -----------------------------------------------------------------
+# Database – you are using SQLite (fine for a small home server)
+# -----------------------------------------------------------------
+database:
+  name: "sqlite3"
+  args:
+    database: /data/homeserver.db
+
+# -----------------------------------------------------------------
+# Logging – keep the log file inside the data volume so it survives restarts
+# -----------------------------------------------------------------
+log_config: "/data/matrix-marshixel.duckdns.org.log.config"
+
+# -----------------------------------------------------------------
+# Media store – where uploaded files (avatars, images, etc.) are kept
+# -----------------------------------------------------------------
+media_store_path: /data/media_store
+
+# -----------------------------------------------------------------
+# Registration – you have a shared secret for programmatic registration
+# (e.g., bots).  Keep it secret and don’t expose it publicly.
+# -----------------------------------------------------------------
+registration_shared_secret: "CHANGE_ME"
+
+# -----------------------------------------------------------------
+# Statistics – you already disabled reporting to matrix.org
+# -----------------------------------------------------------------
+report_stats: false
+
+# -----------------------------------------------------------------
+# Cryptographic secrets – these must be random strings (at least 32 chars)
+# -----------------------------------------------------------------
+macaroon_secret_key: "CHANGE_ME"
+form_secret: "CHANGE_ME"
+signing_key_path: "/data/matrix-marshixel.duckdns.org.signing.key"
+
+# -----------------------------------------------------------------
+# Trusted key servers – you only need the official matrix.org server
+# -----------------------------------------------------------------
+trusted_key_servers:
+  - server_name: "matrix.org"
+
+# -----------------------------------------------------------------
+# Optional – enable federation (default is on).  If you want to restrict
+# which external homeservers can talk to you, uncomment the line below.
+# -----------------------------------------------------------------
