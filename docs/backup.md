@@ -58,3 +58,6 @@ cat /var/log/backup-remote.log
 - SSH server must be running: `sudo systemctl start sshd`
 - UFW must allow SSH: `sudo ufw allow ssh`
 - Note: sshd is not set to start on boot by default on CachyOS
+
+## Config fix
+Ip adress of the PC needs to be static. Change in the Telekomrouter and check "Always the same IPv4 address" on.
