@@ -12,7 +12,7 @@ PC for redundancy.
 
 ## Storage
 - Local: /srv/backups (maximum 2 backups kept)
-- Remote: /home/marshixel/server-backups on CachyOS PC (192.168.2.62)
+- Remote: /home/marshixel/server-backups on CachyOS PC (192.168.2.71)
 - Format: tar.gz compressed archive
 
 ## Schedule
