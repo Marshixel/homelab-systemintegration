@@ -1,0 +1,23 @@
+services:
+  minecraft-vanilla:
+    image: itzg/minecraft-server:java21
+    container_name: minecraft-cobblemon
+    restart: unless-stopped
+    ports:
+      - "25566:25565"
+    volumes:
+      - /srv/gameservers/minecraft-cobblemon/data:/data
+    environment:
+      - EULA=TRUE
+      - TYPE=AUTO_CURSEFORGE
+      - CF_API_KEY=${CF_API_KEY}
+      - CF_PAGE_URL=https://www.curseforge.com/minecraft/modpacks/cobbleverse-cobblemon
+      - CF_MODPACK_ZIP=/data/COBBLEVERSE - Pokemon Adventure [Cobblemon]-1.7.2-CF.zip
+      - VERSION=LATEST
+      - MEMORY=8G
+      - OPS=Marshixel
+      - WHITELIST=Marshixel,GER_Toom
+      - ENFORCE_WHITELIST=TRUE
+      - MOTD=Marshixel Homelab Server
+      - DIFFICULTY=hard
+      - MAX_PLAYERS=10
