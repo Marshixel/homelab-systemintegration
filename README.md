@@ -114,7 +114,6 @@ Building this homelab to develop practical, hands-on experience in:
 
 ### Phase 2 — Communication & Services
 - TeamSpeak 6 server for voice chat
-- Matrix/Element for self-hosted messaging
 - IRC server (Ergo)
 - XMPP server (Prosody)
 
