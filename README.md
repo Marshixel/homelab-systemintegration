@@ -121,7 +121,7 @@ Building this homelab to develop practical, hands-on experience in:
 - Dedicated environment for learning ethical hacking and cybersecurity
 - CTF practice and vulnerability research
 - Isolated network for safe experimentation
-
+- Yggdrasil introduction (after full release: https://yggdrasil-network.github.io/)
 ---
 
 ## 📚 Learning Journey
