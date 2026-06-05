@@ -1,5 +1,26 @@
+# Ignore ALL hidden files except those explicitly whitelisted
+.*
+!.gitignore
+!.dockerenv
+
+# Explicitly ignore dangerous paths
+.cache/
+.config/
+.ssh/
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.lesshst
+.sudo_as_admin_successful
+.selected_editor
+.git-credentials
+.gitconfig*
 .env
 *.env
 **/secrets
-**/.env
-.env
+
+# Ignore data directories that may contain service data
+docker/*/data/
+**/postgres/
+**/matrix/data/
