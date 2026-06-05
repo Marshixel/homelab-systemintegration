@@ -60,10 +60,10 @@ Only one or two run simultaneously due to hardware constraints.
 | Server | Status | Port |
 |--------|--------|------|
 | Minecraft Java (Paper) | Active | 25565 |
-| Modded Minecraft (Cobblemon) | Planned | - |
-| Modded Minecraft (ATM10) | Planned | - |
+| Modded Minecraft (Cobblemon) | Active | 25565 |
+| Modded Minecraft (ATM10) | Active | 25565 |
 | Garry's Mod TTT | Planned | - |
-| Hytale | Planned | - |
+| Hytale | Active | 5520 |
 
 Friends connect via: `marshixelhomelab.duckdns.org`
 
